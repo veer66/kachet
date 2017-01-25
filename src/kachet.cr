@@ -3,7 +3,7 @@ require "./kachet/*"
 module Kachet
 
   alias Edge = NamedTuple(p: Int32, edge_type: EdgeType, 
-                         w: Int32, unk: Int32)
+                          w: Int32, unk: Int32)
  
   class Pointer
     property s, node_id, offset, is_final
@@ -244,15 +244,5 @@ module Kachet
       words_with_payload << {line, true}
     end
     return PrefixTree.new(words_with_payload)
-  end
-  
-  if ARGV.size != 1
-    puts "Usage: ./kachet <dict path>"
-    exit 1
-  end
-  tree = load_dict(ARGV[0])
-  tokenizer = Tokenizer.new(tree)
-  STDIN.each_line do |line|
-    puts tokenizer.tokenize(line).join("|")
   end
 end
