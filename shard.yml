@@ -1,0 +1,13 @@
+name: kachet
+version: 0.1.0
+
+authors:
+  - Vee Satayamas <vsatayamas@gmail.com>
+
+targets:
+  kachet:
+    main: src/kachet.cr
+
+crystal: 0.20.5
+
+license: MIT
